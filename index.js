@@ -18,7 +18,7 @@ const upload = multer({
     storage: multerU.storage,
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 const userController=require('./src/controller/userController');
 const productController = require('./src/controller/productController');
 
