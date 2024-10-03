@@ -28,22 +28,22 @@ app.get('/', (req, res) => {
 });
 
 /* products routing */
-app.get('/product/:id',productController.getOne);
-app.get('/products/getAll',productController.getAll);
-app.get('/products/getProducts',productController.getProducts);
-app.post('/products/search',productController.search);
+app.get('/e-commerce/api/product/:id',productController.getOne);
+app.get('/e-commerce/api/products/getAll',productController.getAll);
+app.get('/e-commerce/api/products/getProducts',productController.getProducts);
+app.post('/e-commerce/api/products/search',productController.search);
 
-app.post('/product/add',upload.single('productImage'),productController.addProduct);
-app.delete('/product/deleteProduct/:id',productController.deleteProduct);
-app.put('/product/edit/:id',upload.single('productImage'),productController.updateProduct);
+app.post('/e-commerce/api/product/add',upload.single('productImage'),productController.addProduct);
+app.delete('/e-commerce/api/product/deleteProduct/:id',productController.deleteProduct);
+app.put('/e-commerce/api/product/edit/:id',upload.single('productImage'),productController.updateProduct);
 
 /*users routing*/
-app.get('/user/getUsers',userController.getUsers);
-app.get('/user/:id',userController.getOne);
-app.post('/user/login',userController.login);
-app.post('/user/add',upload.single('profilePicture'),userController.addUser);
-app.delete('/user/deleteUser/:id',userController.deleteUser);
-app.put('/user/updateUser/:id',upload.single('profilePicture'),userController.updateUser);
+app.get('/e-commerce/api/user/getUsers',userController.getUsers);
+app.get('/e-commerce/api/user/:id',userController.getOne);
+app.post('/e-commerce/api/user/login',userController.login);
+app.post('/e-commerce/api/user/add',upload.single('profilePicture'),userController.addUser);
+app.delete('/e-commerce/api/user/deleteUser/:id',userController.deleteUser);
+app.put('/e-commerce/api/user/updateUser/:id',upload.single('profilePicture'),userController.updateUser);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

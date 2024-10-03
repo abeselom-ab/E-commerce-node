@@ -35,7 +35,7 @@ module.exports={
            res.send(response);
         } catch (error) {
             console.log(error);
-            res.send(error.massage);
+            res.send(error.message);
         }
     },
     async deleteProduct(req,res){
@@ -44,7 +44,7 @@ module.exports={
         let response = await product.findOneAndDelete({_id:id});
         res.send(response);
         } catch (error) {
-            res.send(error.massage);
+            res.send(error.message);
         }
         
     },
