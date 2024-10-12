@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path')
 
-const dest = path.join(__dirname,'../storage/uploads/');
+const dest = path.join(__dirname,'../uploads/');
 
 const storage = multer.diskStorage({
   destination: function (req, file, next) {
@@ -11,13 +11,13 @@ const storage = multer.diskStorage({
     else if (file.mimetype.startsWith('image/')) {
       console.log(file.originalname);
       console.log(file.mimetype);
-      next(null, dest+'images/');
+      next(null, dest);
     }
      
     else if (file.mimetype.startsWith('video/'))
-      next(null, dest+'videos');
+      next(null, dest);
     else if(file.mimetype.startsWith('audio/'))
-      next(null, dest+'audio/');
+      next(null, dest);
     else {
       console.log(file.mimetype);
       next({ message: 'File format not supported! select another one.' })
